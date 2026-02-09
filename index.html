@@ -1,41 +1,64 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>模拟社交平台 - 发现生活</title>
+    <title>Simulated Social Platform - Discover Life</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* --- 保持原有的样式基础，增加点击反馈 --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif; }
+        /* --- Keeping original styles, adding click feedback --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; }
         body { background-color: #f5f5f5; color: #333; line-height: 1.6; }
         
         .header { position: fixed; top: 0; left: 0; right: 0; height: 50px; background-color: white; display: flex; justify-content: space-between; align-items: center; padding: 0 15px; z-index: 100; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); }
-        .logo { color: #ff2442; font-weight: bold; font-size: 20px; }
-        .search-bar { flex: 1; margin: 0 15px; background-color: #f5f5f5; border-radius: 15px; height: 34px; display: flex; align-items: center; padding: 0 15px; color: #999; font-size: 14px; }
         
-        /* 优化头部图标区域 */
-        .header-icons { display: flex; align-items: center; }
+        /* 1. Logo: Prevent wrapping */
+        .logo { color: #ff2442; font-weight: bold; font-size: 18px; white-space: nowrap; margin-right: 10px; }
         
-        /* 商城入口样式优化 */
+        /* 2. Search Bar: Prevent wrapping and text overflow */
+        .search-bar { 
+            flex: 1; 
+            margin-right: 10px; 
+            background-color: #f5f5f5; 
+            border-radius: 15px; 
+            height: 34px; 
+            display: flex; 
+            align-items: center; 
+            padding: 0 10px; 
+            color: #999; 
+            font-size: 13px; 
+            overflow: hidden; /* Hide overflow text */
+        }
+        .search-bar span {
+            white-space: nowrap; /* Force single line */
+            overflow: hidden;
+            text-overflow: ellipsis; /* Add ... if too long */
+        }
+
+        /* Optimize header icon area */
+        .header-icons { display: flex; align-items: center; flex-shrink: 0; /* Prevent shrinking */ }
+        
+        /* 3. Mall entry style optimization */
         .mall-entry {
             text-decoration: none; 
             color: #333; 
-            margin-left: 10px; 
+            margin-left: 5px; 
             display: flex; 
             flex-direction: column; 
             align-items: center;
             justify-content: center;
             line-height: 1;
             transition: opacity 0.2s;
+            white-space: nowrap; /* Prevent wrapping */
         }
         .mall-entry:active { opacity: 0.7; }
         .mall-entry i { font-size: 18px; color: #ff2442; margin-bottom: 2px; }
-        .mall-entry span { font-size: 10px; color: #ff2442; font-weight: bold; transform: scale(0.9); }
+        /* Slightly smaller font to fit 'Simulated Mall' */
+        .mall-entry span { font-size: 9px; color: #ff2442; font-weight: bold; transform: scale(0.95); }
 
-        .header-icons .fa-bell { margin-left: 15px; font-size: 20px; color: #333; }
+        .header-icons .fa-bell { margin-left: 12px; font-size: 20px; color: #333; }
         
-        /* ... content, card, footer 样式保持不变 ... */
+        /* ... content, card, footer styles remain same ... */
         .content { margin-top: 50px; padding-bottom: 60px; column-count: 2; column-gap: 10px; padding: 10px; }
         .card { background-color: white; margin-bottom: 10px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); break-inside: avoid; cursor: pointer; transition: transform 0.2s; }
         .card:active { transform: scale(0.98); }
@@ -58,17 +81,20 @@
             .footer { bottom: 0; position: fixed;}
         }
     </style>
-  <script type="module" crossorigin src="/Tracker-G-M-EN/assets/main-BclRW-g_.js"></script>
-  <link rel="modulepreload" crossorigin href="/Tracker-G-M-EN/assets/index-_uzHh49c.js">
+  <script type="module" crossorigin src="/Tracker-G-M-EN/assets/main-DXPSzGJa.js"></script>
+  <link rel="modulepreload" crossorigin href="/Tracker-G-M-EN/assets/index-3ToTZjbk.js">
 </head>
 <body>
     <div class="header">
-        <div class="logo">模拟社区</div>
-        <div class="search-bar"><i class="fas fa-search" style="margin-right:5px"></i> <span>搜索商品</span></div>
+        <div class="logo">Simulated</div>
+        <div class="search-bar">
+            <i class="fas fa-search" style="margin-right:5px; flex-shrink:0;"></i> 
+            <span>Search products</span>
+        </div>
         <div class="header-icons">
             <a href="mall.html" class="mall-entry">
                 <i class="fas fa-store"></i>
-                <span>模拟商城</span>
+                <span>Mall</span>
             </a>
             <i class="far fa-bell"></i>
         </div>
@@ -77,284 +103,284 @@
     <div class="content" id="content"></div>
     
     <div class="footer">
-        <div class="footer-item active"><i class="fas fa-home"></i>首页</div>
-        <div class="footer-item"><i class="fas fa-video"></i>视频</div>
+        <div class="footer-item active"><i class="fas fa-home"></i>Home</div>
+        <div class="footer-item"><i class="fas fa-video"></i>Video</div>
         <div class="footer-item"><i class="fas fa-plus-circle" style="font-size: 32px; color: #ff2442;"></i></div>
-        <div class="footer-item"><i class="far fa-comment-dots"></i>消息</div>
-        <div class="footer-item"><i class="far fa-user"></i>我</div>
+        <div class="footer-item"><i class="far fa-comment-dots"></i>Messages</div>
+        <div class="footer-item"><i class="far fa-user"></i>Me</div>
     </div>
 
 
 
     <script>
-        // 数据源：品牌和内容已改为模拟数据
-        // 数据源：已更新失效图片
+        // Data source: Brands and content have been changed to simulated data
+        // Data source: Invalid images have been updated
         const cardData = [
             {
                 id: 101,
-                title: "😭博主没骗我！这支模拟口红显白到发光！",
-                image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500&q=80",
-                user: "美妆蛋挞",
-                likes: "10万+",
+                title: "😭The blogger didn't lie! This simulated lipstick makes skin look glowing!",
+                // [REPLACED] Replaced with local asset path
+                image: "src/assets/mmexport1770633966545.jpg",
+                user: "Beauty Tart",
+                likes: "100k+",
                 isAd: true,
-                targetUrl: "taobao.html" 
             },
             {
                 id: 102,
-                title: "挑战全网最美模拟日落，原图直出",
-                // 【已替换】日落风景图
+                title: "Challenging the most beautiful simulated sunset on the web, straight out of camera",
+                // [Replaced] Sunset landscape image
                 image: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=500&q=80", 
-                user: "旅行家",
+                user: "Traveler",
                 likes: 4522
             },
             {
                 id: 999, 
-                title: "🔥【官方补贴】模拟品牌免洗破壁机，早八人续命神器！",
-                // 【已替换】厨房电器/搅拌机图
+                title: "🔥[Official Subsidy] Simulated Brand Self-cleaning Blender, a lifesaver for morning commuters!",
+                // [Replaced] Kitchen appliance/blender image
                 image: "https://images.unsplash.com/photo-1585325701165-351af916e581?w=500&q=80", 
-                user: "模拟品牌官方",
-                likes: "广告", 
+                user: "Simulated Brand Official",
+                likes: "Ad", 
                 isAd: true,
                 targetUrl: "joyoung.html" 
             },
             {
                 id: 103,
-                title: "减脂餐打卡Day30，真的瘦了",
+                title: "Fat loss meal check-in Day 30, really lost weight",
                 image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&q=80",
-                user: "自律小陈",
+                user: "Disciplined Chen",
                 likes: 899
             },
             {
                 id: 104,
-                title: "沉浸式回家，独居女生的快乐",
-                // 【已替换】温馨家居室内图
+                title: "Immersive homecoming, the joy of a girl living alone",
+                // [Replaced] Cozy home interior image
                 image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&q=80", 
-                user: "宅宅",
-                likes: "1.2万"
+                user: "Homebody",
+                likes: "12k"
             },
             {
                 id: 105,
-                title: "我的工位改造，打工人也要精致",
+                title: "My desk makeover, workers need to be exquisite too",
                 image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=500&q=80",
                 user: "OfficeLady",
                 likes: 566
             },
             {
                 id: 1,
-                title: "周末打卡网红咖啡厅，这个角落拍照绝了！",
-                desc: "发现一家藏在胡同里的宝藏咖啡厅，装修风格超级ins风，特别是这个角落的光线拍照简直绝绝子！",
+                title: "Weekend check-in at viral cafe, this corner is perfect for photos!",
+                desc: "Found a hidden gem cafe in the alley, the decor is super ins-style, the lighting in this corner is just amazing!",
                 image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 user: "C",
-                username: "咖啡探店家",
+                username: "Cafe Explorer",
                 likes: 342,
                 comments: 56,
                 favorites: 128
             },
             {
                 id: 2,
-                title: "自制低卡奶茶，减肥也能喝！",
-                desc: "分享我的低卡奶茶配方，一杯不到100大卡，减肥期间也能满足奶茶瘾！",
+                title: "Homemade low-cal milk tea, drink it even on a diet!",
+                desc: "Sharing my low-cal milk tea recipe, less than 100 calories a cup, satisfy your milk tea cravings while dieting!",
                 image: "https://images.unsplash.com/photo-1568649929103-28ffbefaca1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 user: "M",
-                username: "健康生活家",
+                username: "Healthy Lifer",
                 likes: 1256,
                 comments: 234,
                 favorites: 512
             },
             {
                 id: 3,
-                title: "2023秋冬穿搭指南，这5件单品必须拥有",
-                desc: "整理了我最爱的5件秋冬单品，百搭又时尚，穿出高级感！",
+                title: "Autumn/Winter Outfit Guide, 5 must-have items",
+                desc: "Organized my favorite 5 autumn/winter items, versatile and stylish, look high-end!",
                 image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 user: "F",
-                username: "时尚穿搭师",
+                username: "Fashion Stylist",
                 likes: 2897,
                 comments: 432,
                 favorites: 987
             },
             {
                 id: 4,
-                title: "新手化妆教程，十分钟搞定日常妆",
-                desc: "分享我的快速化妆技巧，十分钟就能完成一个精致的日常妆容，适合新手小白！",
-                image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                title: "Beginner makeup tutorial, daily look in 10 minutes",
+                desc: "Sharing my quick makeup tips, finish an exquisite daily look in 10 minutes, suitable for beginners!",
+                image: "src/assets/mmexport1770633975215.jpg",
                 user: "B",
-                username: "美妆达人",
+                username: "Beauty Guru",
                 likes: 1876,
                 comments: 321,
                 favorites: 654
             },
             {
                 id: 5,
-                title: "周末自驾游，发现绝美小众景点",
-                desc: "周末和朋友自驾去了这个小众景点，人少景美，随手一拍就是大片！",
+                title: "Weekend road trip, found a beautiful niche spot",
+                desc: "Went on a road trip with friends this weekend to this niche spot, few people and beautiful scenery, every shot is a blockbuster!",
                 image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 user: "T",
-                username: "旅行爱好者",
+                username: "Travel Lover",
                 likes: 765,
                 comments: 98,
                 favorites: 234
             },
             {
                 id: 6,
-                title: "DIY手工皂教程，天然无添加",
-                desc: "分享我的手工皂制作过程，材料简单，天然无添加，用着超放心！",
-                image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                title: "DIY handmade soap tutorial, natural and additive-free",
+                desc: "Sharing my handmade soap making process, simple ingredients, natural and additive-free, super safe to use!",
+               image: "src/assets/mmexport1770633977450.jpg",
                 user: "H",
-                username: "手工达人",
+                username: "Craft Expert",
                 likes: 432,
                 comments: 76,
                 favorites: 189
             },
             {
                 id: 7,
-                title: "一周减脂餐食谱，好吃不挨饿",
-                desc: "分享我的一周减脂餐食谱，营养均衡，好吃不挨饿，已经瘦了5斤！",
+                title: "One-week fat loss meal plan, delicious and filling",
+                desc: "Sharing my one-week fat loss meal plan, balanced nutrition, delicious and not starving, lost 5 lbs already!",
                 image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 user: "D",
-                username: "健身教练",
+                username: "Fitness Coach",
                 likes: 1987,
                 comments: 345,
                 favorites: 876
             },
             {
                 id: 8,
-                title: "家居好物分享，提升生活幸福感",
-                desc: "这些家居小物真的能提升生活幸福感，价格不贵但超级实用！",
+                title: "Home goods sharing, boosting happiness",
+                desc: "These home items really boost life happiness, not expensive but super practical!",
                 image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 user: "L",
-                username: "生活家",
+                username: "Life Artist",
                 likes: 765,
                 comments: 123,
                 favorites: 298
             },
             {
                 id: 9,
-                title: "平价护肤品测评，学生党必看",
-                desc: "测评了10款平价护肤品，这几款真的值得入手，性价比超高！",
-                image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                title: "Affordable skincare review, must-see for students",
+                desc: "Reviewed 10 affordable skincare products, these are really worth buying, great value for money!",
+                image: "src/assets/mmexport1770633968735.jpg",
                 user: "S",
-                username: "护肤达人",
+                username: "Skincare Guru",
                 likes: 2345,
                 comments: 456,
                 favorites: 789
             },
             {
                 id: 10,
-                title: "摄影技巧分享，手机也能拍大片",
-                desc: "分享几个简单的摄影技巧，用手机也能拍出专业级照片！",
-                image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                title: "Photography tips, shoot blockbusters with phone",
+                desc: "Sharing some simple photography tips, take professional-level photos with just your phone!",
+                image: "src/assets/mmexport1770633971096.jpg",
                 user: "P",
-                username: "摄影师",
+                username: "Photographer",
                 likes: 1432,
                 comments: 267,
                 favorites: 543
             },
             {
                 id: 11,
-                title: "周末烘焙日记，自制抹茶蛋糕",
-                desc: "第一次尝试做抹茶蛋糕，没想到一次就成功了，味道超赞！",
+                title: "Weekend baking diary, homemade matcha cake",
+                desc: "First attempt at matcha cake, didn't expect it to succeed in one go, tastes amazing!",
                 image: "https://images.unsplash.com/photo-1562440499-64c9a111f713?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 user: "K",
-                username: "烘焙爱好者",
+                username: "Baking Lover",
                 likes: 876,
                 comments: 154,
                 favorites: 324
             },
             {
                 id: 12,
-                title: "办公室健身小动作，缓解久坐疲劳",
-                desc: "分享几个可以在办公室做的健身小动作，缓解久坐带来的疲劳感！",
+                title: "Office workout moves, relieve sitting fatigue",
+                desc: "Sharing some workout moves you can do in the office to relieve fatigue from sitting too long!",
                 image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 user: "W",
-                username: "职场健康",
+                username: "Workplace Health",
                 likes: 543,
                 comments: 87,
                 favorites: 198
             },
             {
                 id: 13,
-                title: "亲子游攻略，带娃出游不累人",
-                desc: "分享我的亲子游经验，带娃出游也能轻松愉快，不再手忙脚乱！",
+                title: "Parent-child travel guide, easy trip with kids",
+                desc: "Sharing my parent-child travel experience, traveling with kids can be easy and fun, no more chaos!",
                 image: "https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 user: "Q",
-                username: "宝妈日记",
+                username: "Mom Diary",
                 likes: 678,
                 comments: 132,
                 favorites: 287
             },
             {
                 id: 14,
-                title: "读书分享 | 最近读完的5本好书",
-                desc: "分享最近读完的5本书，每一本都值得反复阅读，强烈推荐！",
-                image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                title: "Book sharing | 5 good books I read recently",
+                desc: "Sharing 5 books I finished recently, every one is worth re-reading, highly recommended!",
+                image: "src/assets/mmexport1770633973302.jpg",
                 user: "R",
-                username: "读书人",
+                username: "Bookworm",
                 likes: 932,
                 comments: 213,
                 favorites: 456
             },
             {
                 id: 15,
-                title: "阳台小花园，城市里的绿洲",
-                desc: "把我的小阳台改造成了迷你花园，每天回家看到这些植物心情都变好了！",
+                title: "Balcony mini garden, oasis in the city",
+                desc: "Transformed my small balcony into a mini garden, seeing these plants when I get home makes me feel so much better!",
                 image: "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 user: "G",
-                username: "园艺爱好者",
+                username: "Gardening Lover",
                 likes: 754,
                 comments: 145,
                 favorites: 312
             },
             {
                 id: 16,
-                title: "平价彩妆测评，这些真的不输大牌",
-                desc: "测评了几款平价彩妆，有些效果真的不输大牌，性价比超高！",
+                title: "Affordable makeup review, not losing to big brands",
+                desc: "Reviewed several affordable makeup products, some results are really comparable to big brands, high cost performance!",
                 image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 user: "A",
-                username: "美妆测评师",
+                username: "Makeup Reviewer",
                 likes: 1654,
                 comments: 354,
                 favorites: 687
             },
             {
                 id: 17,
-                title: "一人食食谱，简单又美味",
-                desc: "分享几个适合一个人吃的简单食谱，15分钟就能搞定，营养又美味！",
+                title: "Solo dining recipes, simple and delicious",
+                desc: "Sharing simple recipes suitable for eating alone, ready in 15 minutes, nutritious and tasty!",
                 image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 user: "E",
-                username: "美食家",
+                username: "Foodie",
                 likes: 1243,
                 comments: 276,
                 favorites: 543
             },
             {
                 id: 18,
-                title: "周末市集淘宝记，发现好多有趣小物",
-                desc: "周末去了创意市集，发现了好多有趣的手工艺品，忍不住买买买！",
+                title: "Weekend market treasure hunt, found cool items",
+                desc: "Went to the creative market this weekend, found so many interesting handicrafts, couldn't help buying!",
                 image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 user: "V",
-                username: "市集爱好者",
+                username: "Market Lover",
                 likes: 567,
                 comments: 97,
                 favorites: 213
             },
             {
                 id: 19,
-                title: "我的极简生活，少即是多",
-                desc: "践行极简主义一年后，我的生活发生了这些变化，物品少了但幸福感增加了！",
+                title: "My minimalist life, less is more",
+                desc: "After practicing minimalism for a year, my life has changed like this, fewer items but more happiness!",
                 image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 user: "J",
-                username: "极简生活",
+                username: "Minimalist",
                 likes: 1345,
                 comments: 278,
                 favorites: 543
             },
             {
                 id: 20,
-                title: "宠物日常，我家猫咪的搞笑瞬间",
-                desc: "记录我家猫咪的日常，这些搞笑瞬间真的太治愈了！",
+                title: "Pet daily, my cat's funny moments",
+                desc: "Recording my cat's daily life, these funny moments are just so healing!",
                 image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 user: "N",
-                username: "猫奴日记",
+                username: "Cat Slave Diary",
                 likes: 2456,
                 comments: 423,
                 favorites: 897
@@ -365,17 +391,17 @@
             const content = document.getElementById('content');
             let html = '';
             cardData.forEach(item => {
-                // 如果有 targetUrl，点击跳转，否则弹窗演示
+                // If there is a targetUrl, redirect on click, otherwise alert
                 const clickAction = item.targetUrl 
                     ? `window.location.href='${item.targetUrl}'` 
-                    : `alert('模拟跳转：${item.title}')`;
+                    : `alert('Simulated Redirect: ${item.title.replace(/'/g, "\\'")}')`;
                 
                 html += `
                 <div class="card" onclick="${clickAction}">
                     <img src="${item.image}" class="card-image" loading="lazy">
                     <div class="card-content">
                         <div class="card-title">
-                            ${item.isAd ? '<span style="color:#ccc;font-weight:normal;font-size:10px;border:1px solid #eee;padding:0 2px;margin-right:2px;">赞助</span>' : ''}
+                            ${item.isAd ? '<span style="color:#ccc;font-weight:normal;font-size:10px;border:1px solid #eee;padding:0 2px;margin-right:2px;">Sponsored</span>' : ''}
                             ${item.title}
                         </div>
                         <div class="card-footer">

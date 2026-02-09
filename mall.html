@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>模拟商城 - 官方正品</title>
+    <title>Simulated Mall - Official Authentic</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
         body { background-color: #f4f4f4; padding-bottom: 60px; max-width: 480px; margin: 0 auto; min-height: 100vh;}
 
-        /* 顶部搜索栏 */
+        /* Top Search Bar */
         .mall-header {
             position: sticky; top: 0; z-index: 99; background: #ff2442; padding: 10px;
             display: flex; align-items: center; gap: 10px;
@@ -24,12 +24,12 @@
         .banner { width: 100%; height: 150px; background: #ddd; position: relative; overflow: hidden; }
         .banner img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* 金刚区导航 */
+        /* Grid Navigation */
         .nav-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; padding: 15px 10px; background: white; margin-bottom: 10px; }
         .nav-item { display: flex; flex-direction: column; align-items: center; font-size: 12px; color: #333; }
         .nav-icon { width: 40px; height: 40px; border-radius: 50%; margin-bottom: 5px; background: #f0f0f0; display: flex; justify-content: center; align-items: center; font-size: 18px; }
 
-        /* 商品列表 */
+        /* Product List */
         .section-title { padding: 10px; font-weight: bold; color: #333; display: flex; align-items: center; gap: 5px; }
         .goods-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 10px; }
         
@@ -42,7 +42,7 @@
         .goods-price span { font-size: 12px; }
         .goods-tag { font-size: 10px; border: 1px solid #ff2442; color: #ff2442; padding: 0 2px; border-radius: 2px; margin-left: 5px; }
 
-        /* 底部导航 */
+        /* Bottom Tab Bar */
         .tab-bar {
             position: fixed; bottom: 0; left: 0; right: 0; height: 50px; background: white;
             display: flex; justify-content: space-around; align-items: center;
@@ -51,15 +51,15 @@
         .tab-item { display: flex; flex-direction: column; align-items: center; font-size: 10px; color: #999; }
         .tab-item.active { color: #ff2442; }
     </style>
-  <script type="module" crossorigin src="/Tracker-G-M-EN/assets/mall-Cagf09S_.js"></script>
-  <link rel="modulepreload" crossorigin href="/Tracker-G-M-EN/assets/index-_uzHh49c.js">
+  <script type="module" crossorigin src="/Tracker-G-M-EN/assets/mall-DWXA620h.js"></script>
+  <link rel="modulepreload" crossorigin href="/Tracker-G-M-EN/assets/index-3ToTZjbk.js">
 </head>
 <body>
     <div class="mall-header">
         <i class="fas fa-chevron-left header-icon" onclick="history.back()"></i>
         <div class="search-box">
             <i class="fas fa-search" style="margin-right: 5px;"></i>
-            搜索自营 / 旗舰店
+            Search Stores / Official
         </div>
         <i class="fas fa-shopping-cart header-icon"></i>
     </div>
@@ -69,42 +69,42 @@
     </div>
 
     <div class="nav-grid">
-        <div class="nav-item"><div class="nav-icon" style="background:#e0f2fe; color:#0284c7"><i class="fas fa-mobile-alt"></i></div>数码</div>
-        <div class="nav-item"><div class="nav-icon" style="background:#fce7f3; color:#db2777"><i class="fas fa-tshirt"></i></div>服饰</div>
-        <div class="nav-item"><div class="nav-icon" style="background:#dcfce7; color:#16a34a"><i class="fas fa-apple-alt"></i></div>生鲜</div>
-        <div class="nav-item"><div class="nav-icon" style="background:#fef9c3; color:#ca8a04"><i class="fas fa-home"></i></div>家居</div>
-        <div class="nav-item"><div class="nav-icon" style="background:#f3f4f6; color:#4b5563"><i class="fas fa-th-large"></i></div>更多</div>
+        <div class="nav-item"><div class="nav-icon" style="background:#e0f2fe; color:#0284c7"><i class="fas fa-mobile-alt"></i></div>Digital</div>
+        <div class="nav-item"><div class="nav-icon" style="background:#fce7f3; color:#db2777"><i class="fas fa-tshirt"></i></div>Fashion</div>
+        <div class="nav-item"><div class="nav-icon" style="background:#dcfce7; color:#16a34a"><i class="fas fa-apple-alt"></i></div>Fresh</div>
+        <div class="nav-item"><div class="nav-icon" style="background:#fef9c3; color:#ca8a04"><i class="fas fa-home"></i></div>Home</div>
+        <div class="nav-item"><div class="nav-icon" style="background:#f3f4f6; color:#4b5563"><i class="fas fa-th-large"></i></div>More</div>
     </div>
 
     <div class="section-title">
-        <i class="fas fa-fire" style="color: #ff2442;"></i> 猜你喜欢
+        <i class="fas fa-fire" style="color: #ff2442;"></i> You May Like
     </div>
 
     <div class="goods-list" id="mall-list">
         </div>
 
     <div class="tab-bar">
-        <div class="tab-item active"><i class="fas fa-home" style="font-size:20px"></i>首页</div>
-        <div class="tab-item"><i class="fas fa-list" style="font-size:20px"></i>分类</div>
-        <div class="tab-item"><i class="fas fa-shopping-bag" style="font-size:20px"></i>购物车</div>
-        <div class="tab-item"><i class="fas fa-user" style="font-size:20px"></i>我的</div>
+        <div class="tab-item active"><i class="fas fa-home" style="font-size:20px"></i>Home</div>
+        <div class="tab-item"><i class="fas fa-list" style="font-size:20px"></i>Category</div>
+        <div class="tab-item"><i class="fas fa-shopping-bag" style="font-size:20px"></i>Cart</div>
+        <div class="tab-item"><i class="fas fa-user" style="font-size:20px"></i>Me</div>
     </div>
 
     <script>
         const goodsDB = [
-            // 特殊页面
-            { id: 'joyoung', name: '模拟品牌不用手洗破壁机 家用降噪豆浆机', price: '399', img: 'https://images.unsplash.com/photo-1585325701165-351af916e581?w=500&q=80', tag: '自营', link: 'joyoung.html' },
-            { id: 'taobao', name: '模拟品牌子弹头口红 chill小辣椒色', price: '170', img: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=300&q=80', tag: '热销', link: 'taobao.html' },
+            // Special Pages
+            { id: 'joyoung', name: 'Simulated Brand Self-cleaning Blender Home Noise-canceling Soy Milk Maker', price: '399', img: 'https://images.unsplash.com/photo-1585325701165-351af916e581?w=500&q=80', tag: 'Direct', link: 'joyoung.html' },
+            { id: 'taobao', name: 'Simulated Brand Bullet Lipstick Chill Chili Pepper Color', price: '170', img: "src/assets/mmexport1770633966545.jpg", tag: 'Hot', link: 'taobao.html' },
             
-            // 通用页面 (product.html)
-            { id: 'sim_headphone', name: '模拟品牌/SoundTech 无线蓝牙降噪耳机', price: '2499', img: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80' },
-            { id: 'sim_shoes', name: '模拟品牌/SportX 复古休闲板鞋', price: '749', img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&q=80', tag: '新品' },
-            { id: 'sim_watch', name: '模拟品牌/TimeMaster 简约流金表', price: '1290', img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&q=80' },
-            { id: 'sim_perfume', name: '模拟品牌/ScentLab 嘉柏丽尔天性香水', price: '1850', img: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=300&q=80' },
-            { id: 'sim_coffeemaker', name: '模拟品牌/BrewMaster 全自动咖啡机', price: '3500', img: 'https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=300&q=80', tag: '特价' },
-            { id: 'sim_ebook', name: '模拟品牌/ReadMate 电子书阅读器 墨水屏', price: '1099', img: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&q=80' },
-            { id: 'sim_toycar', name: '模拟品牌/BlockMaster 旗舰跑车积木', price: '2999', img: 'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?w=300&q=80' },
-            { id: 'sim_chair', name: '模拟品牌/ErgoChair 人体工学办公椅', price: '12000', img: 'https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=300&q=80' }
+            // General Pages (product.html)
+            { id: 'sim_headphone', name: 'Simulated Brand/SoundTech Wireless Bluetooth Noise Canceling Headphones', price: '2499', img: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80' },
+            { id: 'sim_shoes', name: 'Simulated Brand/SportX Retro Casual Skate Shoes', price: '749', img: 'src/assets/mmexport1770633975215.jpg', tag: 'New' },
+            { id: 'sim_watch', name: 'Simulated Brand/TimeMaster Minimalist Liquid Gold Watch', price: '1290', img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&q=80' },
+            { id: 'sim_perfume', name: 'Simulated Brand/ScentLab Gabrielle Essence Perfume', price: '1850', img: 'src/assets/mmexport1770633977450.jpg' },
+            { id: 'sim_coffeemaker', name: 'Simulated Brand/BrewMaster Fully Automatic Coffee Machine', price: '3500', img: 'https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=300&q=80', tag: 'Sale' },
+            { id: 'sim_ebook', name: 'Simulated Brand/ReadMate E-book Reader E-ink Screen', price: '1099', img: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&q=80' },
+            { id: 'sim_toycar', name: 'Simulated Brand/BlockMaster Flagship Sports Car Building Blocks', price: '2999', img: 'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?w=300&q=80' },
+            { id: 'sim_chair', name: 'Simulated Brand/ErgoChair Ergonomic Office Chair', price: '12000', img: 'https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=300&q=80' }
         ];
 
         const container = document.getElementById('mall-list');
@@ -116,7 +116,7 @@
             const div = document.createElement('div');
             div.className = 'goods-card';
             
-            // 🔥 优化跳转逻辑：增加 150ms 延迟，确保 IDB 数据写入成功
+            // 🔥 Optimize redirection logic: add 150ms delay to ensure IDB write success
             div.onclick = () => {
                 setTimeout(() => {
                     location.href = targetUrl;
