@@ -1,1 +1,0 @@
-import{T as e}from"./index-Cktl_kVu.js";new e({appId:"simulated-brand-flagship",userId:"user_healthy_life"});document.getElementById("btn-buy").addEventListener("click",()=>{console.log("SimuBrand: Trigger Purchase"),alert("Thank you for supporting Simulated Brand!")});
