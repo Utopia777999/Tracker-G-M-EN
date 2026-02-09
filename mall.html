@@ -51,7 +51,7 @@
         .tab-item { display: flex; flex-direction: column; align-items: center; font-size: 10px; color: #999; }
         .tab-item.active { color: #ff2442; }
     </style>
-  <script type="module" crossorigin src="/Tracker-G-M-EN/assets/mall-DWXA620h.js"></script>
+  <script type="module" crossorigin src="/Tracker-G-M-EN/assets/mall-DXCirksp.js"></script>
   <link rel="modulepreload" crossorigin href="/Tracker-G-M-EN/assets/index-3ToTZjbk.js">
 </head>
 <body>
@@ -88,50 +88,7 @@
         <div class="tab-item"><i class="fas fa-list" style="font-size:20px"></i>Category</div>
         <div class="tab-item"><i class="fas fa-shopping-bag" style="font-size:20px"></i>Cart</div>
         <div class="tab-item"><i class="fas fa-user" style="font-size:20px"></i>Me</div>
-    </div>
-
-    <script>
-        const goodsDB = [
-            // Special Pages
-            { id: 'joyoung', name: 'Simulated Brand Self-cleaning Blender Home Noise-canceling Soy Milk Maker', price: '399', img: 'https://images.unsplash.com/photo-1585325701165-351af916e581?w=500&q=80', tag: 'Direct', link: 'joyoung.html' },
-            { id: 'taobao', name: 'Simulated Brand Bullet Lipstick Chill Chili Pepper Color', price: '170', img: "/assets/mmexport1770633966545.jpg", tag: 'Hot', link: 'taobao.html' },
-            
-            // General Pages (product.html)
-            { id: 'sim_headphone', name: 'Simulated Brand/SoundTech Wireless Bluetooth Noise Canceling Headphones', price: '2499', img: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80' },
-            { id: 'sim_shoes', name: 'Simulated Brand/SportX Retro Casual Skate Shoes', price: '749', img: '/assets/mmexport1770633975215.jpg', tag: 'New' },
-            { id: 'sim_watch', name: 'Simulated Brand/TimeMaster Minimalist Liquid Gold Watch', price: '1290', img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&q=80' },
-            { id: 'sim_perfume', name: 'Simulated Brand/ScentLab Gabrielle Essence Perfume', price: '1850', img: '/assets/mmexport1770633977450.jpg' },
-            { id: 'sim_coffeemaker', name: 'Simulated Brand/BrewMaster Fully Automatic Coffee Machine', price: '3500', img: 'https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=300&q=80', tag: 'Sale' },
-            { id: 'sim_ebook', name: 'Simulated Brand/ReadMate E-book Reader E-ink Screen', price: '1099', img: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&q=80' },
-            { id: 'sim_toycar', name: 'Simulated Brand/BlockMaster Flagship Sports Car Building Blocks', price: '2999', img: 'https://images.unsplash.com/photo-1585366119957-e9730b6d0f60?w=300&q=80' },
-            { id: 'sim_chair', name: 'Simulated Brand/ErgoChair Ergonomic Office Chair', price: '12000', img: 'https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=300&q=80' }
-        ];
-
-        const container = document.getElementById('mall-list');
-        
-        goodsDB.forEach(item => {
-            const targetUrl = item.link || `product.html?id=${item.id}`;
-            const tagHtml = item.tag ? `<span class="goods-tag">${item.tag}</span>` : '';
-
-            const div = document.createElement('div');
-            div.className = 'goods-card';
-            
-            // 🔥 Optimize redirection logic: add 150ms delay to ensure IDB write success
-            div.onclick = () => {
-                setTimeout(() => {
-                    location.href = targetUrl;
-                }, 150); 
-            };
-            
-            div.innerHTML = `
-                <img src="${item.img}" class="goods-img" loading="lazy">
-                <div class="goods-info">
-                    <div class="goods-name">${item.name} ${tagHtml}</div>
-                    <div class="goods-price"><span>¥</span>${item.price}</div>
-                </div>
-            `;
-            container.appendChild(div);
-        });
-    </script>
+    </div>
+    
 </body>
 </html>
